@@ -26,18 +26,12 @@ envs:
               "-FFF------"]      
   
   
-  
   #["FFFF---FFFF",
   #            "FFFF---FFFF",
   #           "FFFFFSFFFFF",
   #           "FFFF---FFFF",
   #           "FFFF---FFFF"]  
   
-
-  
-
-
-
 learning:
   num_episode: 5 # number of episodes of algorithm
   trajectories: 1 # number of K trajectories per single agent
@@ -76,71 +70,28 @@ replay_buffer:
   total_time : 8 # total time steps for each episode horizon + 1
 
 
-
-# # deterministic 2
-  # load_single_theta: ["/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/False/0_2_st_False_single_agent_theta.npy",
-  #                      "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/False/1_2_st_False_single_agent_theta.npy",
-  #                       "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/False/2_2_st_False_single_agent_theta.npy",
-  #                       "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/False/42_2_st_False_single_agent_theta.npy",
-  #                       "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/False/133_2_st_False_single_agent_theta.npy"]
-
-  # load_multiple_theta: ["/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/False/0_2_st_False_theta.npy",
-  #                         "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/False/1_2_st_False_theta.npy",
-  #                         "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/False/2_2_st_False_theta.npy",
-  #                         "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/False/42_2_st_False_theta.npy",
-  #                         "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/False/133_2_st_False_theta.npy"]
-
-
-# # non deterministic 2
-  # load_single_theta: ["/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/True/0_2_st_True_single_agent_theta.npy",
-  #                     "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/True/1_2_st_True_single_agent_theta.npy",
-  #                     "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/True/2_2_st_True_single_agent_theta.npy",
-  #                     "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/True/42_2_st_True_single_agent_theta.npy",
-  #                     "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/True/133_2_st_True_single_agent_theta.npy"]
-
-  # load_multiple_theta: ["/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/True/0_2_st_True_theta.npy",
-  #                       "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/True/1_2_st_True_theta.npy",
-  #                       "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/True/2_2_st_True_theta.npy",
-  #                       "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/True/42_2_st_True_theta.npy",
-  #                       "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/True/133_2_st_True_theta.npy"]
-
 # # deterministic 6
-  load_single_theta: ["/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/False/0_6_st_False_single_agent_theta.npy",
-                        "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/False/1_6_st_False_single_agent_theta.npy",
-                        "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/False/2_6_st_False_single_agent_theta.npy",
-                        "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/False/42_6_st_False_single_agent_theta.npy",
-                        "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/False/133_6_st_False_single_agent_theta.npy"]
+  load_single_theta: ["theta/Parallel-v0/False/0_6_st_False_single_agent_theta.npy",
+                        "theta/Parallel-v0/False/1_6_st_False_single_agent_theta.npy",
+                        "theta/Parallel-v0/False/2_6_st_False_single_agent_theta.npy",
+                        "theta/Parallel-v0/False/42_6_st_False_single_agent_theta.npy",
+                        "theta/Parallel-v0/False/133_6_st_False_single_agent_theta.npy"]
 
-  load_multiple_theta: ["/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/False/0_6_st_False_theta.npy",
-                        "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/False/1_6_st_False_theta.npy",
-                        "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/False/2_6_st_False_theta.npy",
-                        "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/False/42_6_st_False_theta.npy",
-                        "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/False/133_6_st_False_theta.npy"]
-
-# # # # non deterministic 6
-  # load_single_theta: ["/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/True/0_6_st_True_single_agent_theta.npy",
-  #                       "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/True/1_6_st_True_single_agent_theta.npy",
-  #                       "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/True/2_6_st_True_single_agent_theta.npy",
-  #                       "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/True/42_6_st_True_single_agent_theta.npy",
-  #                       "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/True/133_6_st_True_single_agent_theta.npy"]
-
-  # load_multiple_theta: ["/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/True/0_6_st_True_theta.npy",
-  #                       "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/True/1_6_st_True_theta.npy",
-  #                       "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/True/2_6_st_True_theta.npy",
-  #                       "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/True/42_6_st_True_theta.npy",
-  #                       "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/True/133_6_st_True_theta.npy"]
+  load_multiple_theta: ["theta/Parallel-v0/False/0_6_st_False_theta.npy",
+                        "theta/Parallel-v0/False/1_6_st_False_theta.npy",
+                        "theta/Parallel-v0/False/2_6_st_False_theta.npy",
+                        "theta/Parallel-v0/False/42_6_st_False_theta.npy",
+                        "theta/Parallel-v0/False/133_6_st_False_theta.npy"]
 
   num_observations: 8 # number of observations in replay buffer
   replay_size: [1] #[1,5,10,100,1000] #[1,2,3,4,5,6,7,8,9,10,100] # size of replay buffer
-  save_directory: "/home/edge/Desktop/Parallel_Exploration/PGCL-main/datasets/first/tworooms/parl/det/" # path to save policy
+  save_directory: "datasets/tworooms/parl/det/" # path to save policy
   maps :   ["FFFF---FFFF",
               "FFFF---FFFF",
              "FFFFFSFFFFF",
              "FFFF---FFFF",
              "FFFF---FFFF"]
-  
-  
-  
+
         #   ["-FFF------",
         #   "-FFF------",
         #   "---F---FFF",
@@ -153,16 +104,6 @@ replay_buffer:
         #   "-FFF------",
         # ]
 
-            # [ "-FGF------",
-            # "-FFF------",
-            # "---F---FFF",
-            # "FF-F-----F",
-            # "FF-F-----F",
-            # "FFFFFFSFFF",
-            # "FF-F-----F",
-            # "---F-----F",
-            # "-FFF---FFF",
-            # "-FFF------",] 
         #4 holes["SFFF", "FHFH", "FFFH", "HFFG"] #3 holes ["SFFF", "FFFH", "FFFH", "HFFG"]
   agent : "crr"
 

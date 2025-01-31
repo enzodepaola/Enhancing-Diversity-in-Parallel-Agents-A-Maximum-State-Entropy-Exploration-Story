@@ -316,7 +316,7 @@ def collect_rollouts(env, policy, K, T,obs_size,mdp_traj,itr):
   grad = cum_scores/itr
   return grad,cum_entropy
 
-def collect_rollouts_ric(env, policy, K, T,obs_size,itr):
+def collect_rollouts_r(env, policy, K, T,obs_size,itr):
   agents = policy.agents
   obs = []
   acts = []
@@ -536,7 +536,7 @@ def update_trajectory_scores_exact(exact_probs,played_traj, scores):
 
   return -cum_scores
 
-def update_trajectory_scores_ric(old_counts, scores):
+def update_trajectory_scores_r(old_counts, scores):
 
   #calculate the overall probability of the trajectory played by the agents at this iteration
   agents = old_counts.shape[0]
