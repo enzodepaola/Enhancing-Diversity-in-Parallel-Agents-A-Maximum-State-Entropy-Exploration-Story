@@ -19,7 +19,8 @@ from lake import FrozenLakeEnv
 import random
 from logger import Logger
 import os
-
+import sys
+sys.path.append('.')
 # Load YAML file
 with open('config.yaml', 'r') as file:
     cfg = yaml.safe_load(file)
