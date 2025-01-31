@@ -1,4 +1,4 @@
-# Project Name
+# Enhancing-Diversity-in-Parallel-Agents-A-Maximum-State-Entropy-Exploration-Story
 
 Repository for Maximum State Entropy Exploration Via Parallel Agents.
 
