@@ -1,0 +1,169 @@
+
+envs:
+  env_id: "Parallel-v1" #"TaxiCustom-v0" #"FrozenLakeCustom-v0" #"parallel/club-v0"
+  num_envs: 2 # number of paralell environments
+  agents: 2 # number of agents as number of envs
+  multiple_agents: [6]
+  horizon: 10
+  total_time : 11 # total time steps for each episode horizon + 1
+  seed: [0,1,2,42,133]
+  stochastic: true # deterministic environment only for ClubEnv
+  obs_dim: 100 # Taxi = 125 - Frozen-Lake = 16 - ClubEnv = 3 - Tworooms 55 - Corridors 100
+  act_dim: 4 # Taxi = 6 - Frozen-Lake = 4 - ClubEnv = 2
+  state_dict:  {0: 'S1', 1: 'S2', 2: 'S3'} # Only for ClubEnv
+  initial_state: 56 # only for tworooms - 56  labirinth 
+  row: 10
+  col: 10
+  maps :   ["-FFF------",
+              "-FFF------",
+              "---F---FFF",
+              "FF-F-----F",
+              "FF-F-----F",
+              "FFFFFFSFFF",
+              "FF-F-----F",
+              "---F-----F",
+              "-FFF---FFF",
+              "-FFF------"]      
+  
+  
+  
+  #["FFFF---FFFF",
+  #            "FFFF---FFFF",
+  #           "FFFFFSFFFFF",
+  #           "FFFF---FFFF",
+  #           "FFFF---FFFF"]  
+  
+
+  
+
+
+
+learning:
+  num_episode: 5 # number of episodes of algorithm
+  trajectories: 1 # number of K trajectories per single agent
+  iterations: 10000 # number of iterations of algorithm
+  Adam: false
+
+  mini_batch: 40  # mini batch size for gradient update
+
+  initial_lr: 0.15 # initial learning rate 0.3 parallel agents
+  decay_rate: 0.99  
+  decay_steps: 5000000 # as iterations
+
+  beta1: 0.9
+  beta2: 0.999
+  epsilon: 1e-8
+  eval : false # evaluation of policy
+  plot: false # plot the resultss
+
+  eval_interval: 100
+
+  heatmap: false # plot heat map of policy
+
+policy:
+  linear: false # linear policy initialization
+  non_stationary: false # non-stationary policy initialization
+  force_init: false # force initialization of policy to a specific probabilistic values
+  target_policy: [0.5,0.5] # target policy values for force initialization  
+  zero_init: false # initialize theta parameter of the policy to zero random policy
+  single_agent: false #use when to evaluate single agent policy
+
+replay_buffer:
+  env_id: "Parallel-v0" #"TaxiCustom-v0" #"FrozenLakeCustom-v0" #"parallel/club-v0"
+  num_envs: [6,6,6,6,6] # number of paralell environments
+  agents: [6,6,6,6,6] # number of agents as number of envs
+  horizon: 7
+  total_time : 8 # total time steps for each episode horizon + 1
+
+
+
+# # deterministic 2
+  # load_single_theta: ["/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/False/0_2_st_False_single_agent_theta.npy",
+  #                      "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/False/1_2_st_False_single_agent_theta.npy",
+  #                       "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/False/2_2_st_False_single_agent_theta.npy",
+  #                       "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/False/42_2_st_False_single_agent_theta.npy",
+  #                       "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/False/133_2_st_False_single_agent_theta.npy"]
+
+  # load_multiple_theta: ["/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/False/0_2_st_False_theta.npy",
+  #                         "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/False/1_2_st_False_theta.npy",
+  #                         "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/False/2_2_st_False_theta.npy",
+  #                         "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/False/42_2_st_False_theta.npy",
+  #                         "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/False/133_2_st_False_theta.npy"]
+
+
+# # non deterministic 2
+  # load_single_theta: ["/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/True/0_2_st_True_single_agent_theta.npy",
+  #                     "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/True/1_2_st_True_single_agent_theta.npy",
+  #                     "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/True/2_2_st_True_single_agent_theta.npy",
+  #                     "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/True/42_2_st_True_single_agent_theta.npy",
+  #                     "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/True/133_2_st_True_single_agent_theta.npy"]
+
+  # load_multiple_theta: ["/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/True/0_2_st_True_theta.npy",
+  #                       "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/True/1_2_st_True_theta.npy",
+  #                       "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/True/2_2_st_True_theta.npy",
+  #                       "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/True/42_2_st_True_theta.npy",
+  #                       "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/True/133_2_st_True_theta.npy"]
+
+# # deterministic 6
+  load_single_theta: ["/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/False/0_6_st_False_single_agent_theta.npy",
+                        "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/False/1_6_st_False_single_agent_theta.npy",
+                        "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/False/2_6_st_False_single_agent_theta.npy",
+                        "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/False/42_6_st_False_single_agent_theta.npy",
+                        "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/False/133_6_st_False_single_agent_theta.npy"]
+
+  load_multiple_theta: ["/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/False/0_6_st_False_theta.npy",
+                        "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/False/1_6_st_False_theta.npy",
+                        "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/False/2_6_st_False_theta.npy",
+                        "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/False/42_6_st_False_theta.npy",
+                        "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/False/133_6_st_False_theta.npy"]
+
+# # # # non deterministic 6
+  # load_single_theta: ["/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/True/0_6_st_True_single_agent_theta.npy",
+  #                       "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/True/1_6_st_True_single_agent_theta.npy",
+  #                       "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/True/2_6_st_True_single_agent_theta.npy",
+  #                       "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/True/42_6_st_True_single_agent_theta.npy",
+  #                       "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/True/133_6_st_True_single_agent_theta.npy"]
+
+  # load_multiple_theta: ["/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/True/0_6_st_True_theta.npy",
+  #                       "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/True/1_6_st_True_theta.npy",
+  #                       "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/True/2_6_st_True_theta.npy",
+  #                       "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/True/42_6_st_True_theta.npy",
+  #                       "/home/edge/Desktop/Parallel_Exploration/PGCL-main/theta/Parallel-v0/True/133_6_st_True_theta.npy"]
+
+  num_observations: 8 # number of observations in replay buffer
+  replay_size: [1] #[1,5,10,100,1000] #[1,2,3,4,5,6,7,8,9,10,100] # size of replay buffer
+  save_directory: "/home/edge/Desktop/Parallel_Exploration/PGCL-main/datasets/first/tworooms/parl/det/" # path to save policy
+  maps :   ["FFFF---FFFF",
+              "FFFF---FFFF",
+             "FFFFFSFFFFF",
+             "FFFF---FFFF",
+             "FFFF---FFFF"]
+  
+  
+  
+        #   ["-FFF------",
+        #   "-FFF------",
+        #   "---F---FFF",
+        #   "FF-F-----F",
+        #   "FF-F-----F",
+        #   "FFFFFFSFFF",
+        #   "FF-F-----F",
+        #   "---F-----F",
+        #   "-FFF---FFF",
+        #   "-FFF------",
+        # ]
+
+            # [ "-FGF------",
+            # "-FFF------",
+            # "---F---FFF",
+            # "FF-F-----F",
+            # "FF-F-----F",
+            # "FFFFFFSFFF",
+            # "FF-F-----F",
+            # "---F-----F",
+            # "-FFF---FFF",
+            # "-FFF------",] 
+        #4 holes["SFFF", "FHFH", "FFFH", "HFFG"] #3 holes ["SFFF", "FFFH", "FFFH", "HFFG"]
+  agent : "crr"
+
+
